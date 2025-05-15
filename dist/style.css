@@ -37,20 +37,22 @@ body {
   transition: opacity 1s ease;
 }
 
-.love-text::before {
-  content: "♥";
-  animation: heartbeat 1.5s ease-in-out infinite;
-  display: inline-block;
-  color: #ff3366;
-  text-shadow: 0 0 5px #ff3366, 0 0 10px #ff3366, 0 0 15px #ff3366;
+/* Mobil cihazlar için daha büyük yazı boyutu */
+@media (max-width: 768px) {
+  .love-text {
+    font-size: 8vmin;
+    letter-spacing: 1.5vmin;
+    top: 10%;
+  }
 }
 
-@keyframes heartbeat {
-  0% { transform: scale(1); }
-  25% { transform: scale(1.2); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+/* Çok küçük ekranlar için ek ayarlar */
+@media (max-width: 480px) {
+  .love-text {
+    font-size: 10vmin;
+    letter-spacing: 2vmin;
+    top: 8%;
+  }
 }
 
 @keyframes glow {
